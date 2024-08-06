@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Here are the Tasks</h1>
+
+  <% @tasks.each do |task| %>
+    <p>
+    <% if task.completed %>
+      <i class="fa-regular fa-square-check"></i>
+    <% else %>
+      <i class="fa-regular fa-square"></i>
+    <% end %>
+    <%= link_to task.title.capitalize, task_path(task) %>
+
+    <%= link_to task_path(task) do %>
+      <i class="fa-solid fa-trash" style="color: #f90101;"></i>
+    <% end %>
+    </p>
+  <% end %>
+</div>

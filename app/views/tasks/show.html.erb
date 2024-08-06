@@ -1,0 +1,22 @@
+<div class="container my-4">
+  <h1><%= @task.title.capitalize %></h1>
+  <p>
+    <% if @task.completed %>
+      <i class="fa-regular fa-square-check"></i>
+    <% else %>
+      <i class="fa-regular fa-square"></i>
+    <% end %>
+  <strong>Task details:</strong> <%= @task.details %></p>
+
+  <%= link_to edit_task_path, class:"btn btn-success" do%>
+    <i class="fa-solid fa-pen-to-square"></i>
+  <% end %>
+
+  <%= link_to task_path, class:"btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Delete #{@task.title}?" } do %>
+    <i class="fa-solid fa-delete-left"></i>
+  <% end %>
+
+  <%= link_to tasks_path, class:"btn btn-dark" do %>
+    <i class="fa-solid fa-house"></i>
+  <% end %>
+</div>

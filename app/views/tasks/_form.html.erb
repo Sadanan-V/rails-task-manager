@@ -1,0 +1,17 @@
+</-- error if unprocessable -->
+<% @task.errors.full_messages.each do |msg| %>
+  <p class="text-danger"><%= msg %></p>
+<% end %>
+
+</-- form template -->
+  <div class="my-4">
+    <%= form_with model: @task do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title, class:"form-control" %>
+      <%= f.label :details %>
+      <%= f.text_area :details, class:"form-control" %>
+      <%= f.check_box :completed %>
+      <%= f.label :completed %>
+      <%= f.submit class: "btn btn-success mt-3" %>
+    <% end %>
+  </div>
