@@ -1,6 +1,10 @@
 <div class="container">
   <h1>Here are the Tasks</h1>
 
+  <div class="alert alert-primary" role="alert">
+    A lot of card to do!
+  </div>
+
   <% @tasks.each do |task| %>
     <p>
     <% if task.completed %>
